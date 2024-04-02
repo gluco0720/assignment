@@ -1,0 +1,127 @@
+body {
+  background-color: var(--mycolor07);
+  padding-top: 15px;
+}
+.wrapper {
+  width: 1024px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner nav {
+  background-color: var(--mycolor03);
+  text-align: center;
+}
+
+.banner ul {
+  display: inline-block;
+}
+
+.banner ul li {
+  list-style-type: none;
+  float: left;
+}
+.banner ul li a {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /*background-color: rgb(240, 255, 244);*/
+  margin-right: 5px;
+  text-decoration: none;
+  color: rgb(150, 143, 143);
+}
+.banner ul li a:hover {
+  background-color: blue;
+}
+
+.sidebar{
+  background-color: var(--mycolor05);
+  width: 250px;
+  height: 60vh;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.sidebar nav ul li{
+  list-style-type: none;
+}
+.sidebar nav ul li a{
+  background-color: var(--mycolor07);
+  display: block;
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  margin-top: 5px;
+  line-height: 60px;
+  text-decoration: none;
+  font-size: 20px;
+}
+  .sidebar nav ul li a:hover{
+    background-color: var(--mycolor09);
+    color: var(--mycolor08);
+  }
+.content_in {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 30px;
+  background-color: blueviolet;
+  margin-top: 5px;
+}
+.content_in h1 {
+  text-align: center;
+}
+.content_in p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.content_in a {
+  display: block;
+  width: 120px;
+  height: 50px;
+  background-color: brown;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  line-height: 40px;
+}
+.content_in a:hover {
+  color: blue;
+  background-color: aquamarine;
+}
+.footer {
+  text-align: center;
+  background-color: var(--mycolor05);
+}
+.footer p {
+  font-size: 20px;
+  font-weight: bolder;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    width: 100%;
+  }
+  .sidebar{
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .sidebar ul{
+    display: inline-block;
+  }
+  .sidebar ul li{
+    float: left;
+    margin-right: 5px;
+  }
+}
