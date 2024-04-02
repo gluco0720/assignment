@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>居家生活</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <style>
+      .carousel-caption {
+        background-color: rgb(32, 31, 30);
+      }
+      .s05_text01 {
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+    
+     @media screen and (max-width: 768px) {
+      .s07_text{
+           
+          z-index:10;
+          background-color: rgba(0,0,0,0.2);
+          color:aliceblue;
+          padding: 15px;
+          margin-bottom: 25px;
+          border-radius: 10px;
+      } 
+      .s07_pic{
+        left: 0;
+        right: 0;
+      }}
+      @media screen and (max-width: 768px) {
+      .s09_text{
+           
+          z-index:10;
+          background-color: rgba(0,0,0,0.2);
+          color:aliceblue;
+          padding: 15px;
+          margin-top: 20px;
+          border-radius: 10px;
+      }
+      .s09_pic{
+        left: 0;
+        right: 0;
+      } }
+      .myimg{
+            height: 350px;
+        }
+      .timeline-section{
+        position: relative;
+       }
+       .timeline-section::before{
+            position: absolute;
+            content: "";
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background-color: var(--mycolor03);
+            left: 50%;
+            transform: translateX(-50%);
+       }
+       .timeline-pointer{
+        position: relative;
+       }
+       .timeline-pointer::before{
+        position: absolute;
+        content: "";
+        top: 10px;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border-radius: 50%;
+        border: 6px solid var(--mycolor06);
+       }
+       .timeline-pointer:hover::before{
+        width: 25px;
+        height: 25px;
+        border: 10px solid var(--mycolor02);
+       }
+       @media screen and (max-width: 768px){
+        .timeline-pointer::before,.timeline-section::before
+        {
+            display: none;
+        }
+       }
+       .floating-toast {
+            position: fixed;
+            top: 60px;
+            left: 10px;
+            z-index: 1000;
+            /* 使 Toast 在頁面元素之上 */
+        }
+    </style>
+  
+  </head>
+  <body>
+    <!-- section 01 -->
+    <section class="bg-secondary">
+      <div class="container">
+        <div class="text-end py-1">
+          <a href="#"
+            ><i class="fa-brands fa-x-twitter text-white fa-2x wow animate__bounceIn" data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="infinite"></i
+          ></a>
+          <a href="#"><i class="fa-brands fa-facebook text-white fa-2x wow animate__bounceIn" data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok text-white fa-2x wow animate__bounceIn" data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- section 02 -->
+    <section>
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-couch fa-2x wow animate__rotateIn" style="color: #808000;" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                    </li>
+                
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#s04">公司介紹</a>
+                  </li> -->
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#s05">公司歷史</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#s06">公司特色</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#s07">公司特色</a>
+            </li> -->
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#s08">未來前景</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#s09">安心認證</a>
+          </li>
+          <!-- <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#s10">品牌價值</a>
+         </li> -->
+         <li class="nav-item">
+           <a class="nav-link" aria-current="page" href="#s11">聯絡方式</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" aria-current="page" href="#s12">徵才公告</a>
+         </li>
+         <!-- <li class="nav-item">
+         <a class="nav-link" aria-current="page" href="#s13">據點分布</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              高級功能
+          </a>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item disabled" target="_self" href="assignment-product01-Create.html" id="s02_member_btn01">商品建檔</a></li>
+              <li><a class="dropdown-item disabled" target="_self" href="assignment-product01-Read.html" id="s02_member_btn02">商品瀏覽</a></li>
+              <li><a class="dropdown-item disabled" target="_self" href="member-control_panel.html" id="s02_member_btn03">會員管理</a></li>
+          </ul>
+      </li>
+      </ul>
+                <div>
+                  <span class="text-warning h3" id="user_message"></span>
+                    <button class="btn btn-outline-success wow animate__bounceIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="infinite"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal" id="s02_login_btn">登入</button>
+                    <button class="btn btn-success wow animate__bounceInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#registerModal" id="s02_reg_btn">註冊</button>
+                    <button class="btn btn-danger d-none" id="s02_logout_btn">登出</button>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+    </section>
+    <!--section 02 logModal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content ">
+      <div class="modal-header text-bg-warning ">
+        <h1 class="modal-title fs-5 fw-900 " id="exampleModalLabel">會員登入</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="" class="form-label">帳號</label>
+          <input type="text" class="form-control" id="login_username" name="login_username" placeholder="帳號字數4-8!">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">密碼</label>
+          <input type="password" class="form-control" id="login_password" name="login_password" placeholder="密碼字數5-10!">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="20240130_furniture.html" class="me-auto" data-bs-toggle="modal" data-bs-target="#registerModal">還沒有帳號, 註冊去!</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="login_btn">確認</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--section 02 signupModal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header text-bg-info">
+        <h1 class="modal-title fs-5 fw-900" id="exampleModalLabel">會員註冊</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row ">
+          <div class="col-6 border-end">
+            <h2>居家生活館會員守則</h2>
+            <p>歡迎加入會員！為了享有會員優惠及入會禮，請遵守以下會員守則：
+              1. 註冊會員時，請提供真實、準確的個人資訊，包括姓名、聯絡方式等，以便在需要時能夠順利取得購物相關訊息。 2.加入會員，即享有入會禮(不得轉讓)。 3. 請妥善保管您的會員帳號和密碼，避免將其提供給他人使用。</p>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chk01" name="chk01">
+              <label class="form-check-label" for="chk01">
+                同意
+              </label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="mb-3">
+            <label for="username" class="form-label">帳號</label>
+            <input type="text" class="form-control" placeholder="帳號字數4-8!" id="username" name="username">
+              <div class="valid-feedback">帳號可以使用</div>
+              <div class="invalid-feedback">帳號不可以使用</div>
+            </div>
+            <div class="mb-3">
+            <label for="" class="form-label">密碼</label>
+            <input type="password" class="form-control" placeholder="密碼字數5-10!" id="pwd" name="pwd">
+              <div class="valid-feedback">密碼符合規則</div>
+              <div class="invalid-feedback">密碼不符合規則</div>
+            </div>
+            <div class="mb-3">
+            <label for="" class="form-label">確認密碼</label>
+            <input type="password" class="form-control" placeholder="確認密碼!" id="re_pwd" name="re_pwd">
+              <div class="valid-feedback">密碼一致</div>
+              <div class="invalid-feedback">密碼不一致</div>
+            </div>
+            <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="email字數1~10!" id="email" name="email">
+              <div class="valid-feedback">Email符合規則</div>
+              <div class="invalid-feedback">Email不符合規則</div>
+            </div>
+          </div> 
+      </div>
+      <div class="modal-footer">
+        <a href="assignment_furniture.html" class="me-auto" data-bs-toggle="modal" data-bs-target="#loginModal">已經有帳號, 登入去!</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="reg_btn">註冊</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <!-- section 03 -->
+    <section>
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="false"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div
+            class="carousel-item bg-cover active wow animate__backInDown" data-wow-duration="2s" data-wow-delay="1s" data-wow-iteration="1"
+            style="background-image: url(images/desk2.jpg); height: 70vh"
+          >
+            <div
+              class="carousel-caption d-none d-md-block p-4 rounded-5 shadow-sm"
+            >
+              <h5 class="fw-500">周年慶優惠方案</h5>
+              <p>
+                居家生活館周年慶，進口家具美學Ｘ除舊布新！您採購家具的最佳美學攻略！滿額贈好禮 月月抽大獎，與歐美價格同步！買貴退差價！申辦會員消費滿額即贈好禮！買家具消費每滿10萬再抽大獎！好禮等您帶回家！特設展覽歡迎參觀！
+              </p>
+            </div>
+          </div>
+          <div
+            class="carousel-item bg-cover"
+            style="background-image: url(images/light1.jpg); height: 70vh"
+          >
+            <div
+              class="carousel-caption d-none d-md-block p-4 rounded-5 shadow-sm"
+            >
+              <h5 class="fw-500">周年慶時程</h5>
+              <p>
+                113年3月25日至113年4月5日止
+              </p>
+            </div>
+          </div>
+          <div
+            class="carousel-item bg-cover"
+            style="background-image: url(images/sofa4.jpg); height: 70vh"
+          >
+            <div
+              class="carousel-caption d-none d-md-block p-4 rounded-5 shadow-sm"
+            >
+              <h5 class="fw-500">周年慶地點</h5>
+              <p>
+                台中市北屯區東山路二段342號
+              </p>
+            </div>
+          </div>
+          <div
+            class="carousel-item bg-cover"
+            style="background-image: url(images/sofa5.jpg); height: 50vh"
+          >
+            <div
+              class="carousel-caption d-none d-md-block p-4 rounded-5 shadow-sm"
+            >
+              <h5 class="fw-500">會員方案</h5>
+              <p>
+                會員一律10%現金價優惠!
+              </p>
+            </div>
+          </div>
+          <div
+            class="carousel-item bg-cover"
+            style="background-image: url(images/sofa2.jpg); height: 50vh"
+          >
+            <div
+              class="carousel-caption d-none d-md-block p-4 rounded-5 shadow-sm"
+            >
+              <h5 class="fw-500">會員累積滿額禮</h5>
+              <p>
+                活動期間以會員資格消費滿指定門檻，加碼贈送好禮，好禮以活動DM為準。
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <!-- section 04 -->
+    <section class="d-none" id="s04">
+      <div class="container-fluid">
+        <div class="row align-items-center text-center" style="background: linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.2));">
+          <!-- <div
+            class="col-md-5 bg-cover wow animate__fadeInLeftBig" data-wow-duration="2s" data-wow-delay="1s" data-wow-iteration="3"
+            style="background-image: url(img/travel24.jpg); height: 600px;background-attachment: fixed;background-size: cover;background-position: -400px bottom;"
+          ></div> -->
+          <!-- <div class="container"> -->
+            <div class="row ">
+                <div class="col-md-6 ms-auto ">
+                    <div class="card-body">
+                        <canvas id="myChartAddr"></canvas>
+                    </div>
+                </div>
+          
+          <div class="col-md-6 pt-3  me-auto">
+            <h1 class="mb-2">
+              <span class=" fw-900" style="color: darkgreen;">居家生活館</span>
+            </h1>
+            <h1 class="mb-3">專業的傢具</h1>
+            <p class="mb-2"></p>
+            <p class="mb-2">
+              
+            </p>
+            <p class="mb-2">
+              
+            </p>
+            <div class="row">
+              <div class="col-md-3">
+                <h3>平均銷售額</h3>
+                <h2 class="fw-900 counter01">2億元</h2>
+              </div>
+              <div class="col-md-3">
+                <h3>獲獎項目</h3>
+                <h2 class="fw-900 counter02">21/項</h2>
+              </div>
+              <div class="col-md-3">
+                <h3>顧客滿意度</h3>
+                <h2 class="fw-900 counter03">92%</h2>
+              </div>
+              <div class="col-md-3">
+                <h3>公司據點</h3>
+                <h2 class="fw-900 counter04">6/個</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+     <!-- section05 -->
+     <section id="s05">
+      <div class="container wow animate__rotateInUpLeft" data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1">
+        <div class="timeline-section">
+        <div class="row justify-content-center align-items-center timeline-pointer">
+            <div class="col-md-5 mt-3 me-auto">
+                <div class="myimg bg-cover border border-5 border-warning" style="background-image: url(images/desk3.jpg);"></div>
+            </div>
+            <div class="col-md-5 mt-3 ms-auto">
+                <div class="mytext">
+                    <h2 class="fw-900">1980年成立</h2>
+                    <p>於1943年創立居家生活館，主要販售沙發椅和檯燈等產品。擅長以最少的資源創造高品質的產品，體現公司長久以來的核心價值。</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center flex-row-reverse timeline-pointer">
+            <div class="col-md-5 mt-3 ms-auto">
+                <div class="myimg bg-cover border border-5 border-warning" style="background-image: url(images/light3.jpg);"></div>
+            </div>
+            <div class="col-md-5 mt-3 me-auto">
+                <div class="mytext">
+                    <h2 class="fw-900">2016年成立第1家分公司</h2>
+                    <p>於高雄市開設了可體驗自有品牌家具的展示中心及分公司。</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center timeline-pointer">
+            <div class="col-md-5 mt-3 me-auto">
+                <div class="myimg bg-cover border border-5 border-warning" style="background-image: url(images/sofa3.jpg);"></div>
+            </div>
+            <div class="col-md-5 mt-3 ms-auto">
+                <div class="mytext">
+                    <h2 class="fw-900">2010年設立美加據點</h2>
+                    <p>為了在美加當地提供更優質的服務而設立了據點</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center flex-row-reverse timeline-pointer">
+            <div class="col-md-5 mt-3 ms-auto">
+                <div class="myimg bg-cover border border-5 border-warning" style="background-image: url(images/sofa8.jpg);"></div>
+            </div>
+            <div class="col-md-5 mt-3 me-auto">
+                <div class="mytext">
+                    <h2 class="fw-900">2020年全台12家</h2>
+                    <p>12家分公司（台北內湖、台北中正、新北中和、新北土城、桃園、台中北屯、台中南屯、彰化、台南、嘉義、高雄及屏東）</p>
+                    <p> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+     </section>
+    <!-- section 06 -->
+    <section id="s06" class="bg-cover opacity-75 mt-3" style="background-image: url(images/sofa6.jpg);
+    background-attachment: fixed;background-size: cover;background-position: -200px center">
+      <div class="container ">
+        <div class="row align-items-center wow animate__fadeOut" data-wow-duration="3s" data-wow-delay="2s" data-wow-iteration="1">
+          <div class="col-md-3 offset-md-1">
+            <div class="s05_text01">
+              <h2 class="fw-600" style="color: #000080;">居家的專業精神</h2>
+              <p class="  p-2" >居家生活館一直希望為大多數人提供物美價廉的產品，但除了售價和品質，我們在研發產品時同樣重視功能、設計和永續，而能平衡這五大要點的產品，便是大眾化設計。</p>
+            </div>
+          </div>
+          </div>
+        </div>
+    </section>
+     <!-- section 07
+     <section id="s07" class="bg-cover" style="background-image: url(img/travel03.jpg);">
+      <div class="container">
+        <div class="row">
+      <div class="col-md-4 text-center fw-900">
+        <i class="fa-solid fa-plane fa-8x text-danger wow animate__rollIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="infinite"></i>
+        <h3 class="text-danger my-4">旅遊特色</h3>
+        <p class="text-white">臨床抱著政策溝通，勞動請點擊傢俱夫人很多人但他免費電影要求經營許可證，和平島妻子線路春節，通知此外。</p>
+      </div>
+      <div class="col-md-4 text-center fw-900">
+        <i class="fa-solid fa-car fa-8x text-primary wow animate__jackInTheBox" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="infinite"></i>
+        <h3 class="text-primary my-4">參觀地點</h3>
+        <p class="text-white">臨床抱著政策溝通，勞動請點擊傢俱夫人很多人但他免費電影要求經營許可證，和平島妻子線路春節，通知此外。</p>
+      </div>
+      <div class="col-md-4 text-center fw-900">
+        <i class="fa-solid fa-globe fa-8x text-dark wow animate__flipOutX" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="infinite"></i>
+        <h3 class="text-dark my-4">後勤配合</h3>
+        <p class="text-white">臨床抱著政策溝通，勞動請點擊傢俱夫人很多人但他免費電影要求經營許可證，和平島妻子線路春節，通知此外。</p>
+      </div>
+    </div>
+    </div>
+     </section> -->
+     <!-- section 08 -->
+     <section id="s08" style="position: relative;">
+      <div class="row">
+        <div class="col-md-5 bg-cover s07_pic" style="background-image:url(images/sofa4.jpg) ;
+        position: absolute;top:0;bottom: 0;"></div>
+      </div>
+    <div class="container wow animate__fadeInLeftBig" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+      <div class="row justify-content-end">
+      <div class="col-md-7 mt-5 s07_text">
+        <h2>高CP值</h2>
+          <p>全部由工廠直接運送到顧客手上，營運開支也極低。」坎普拉想為大多數人提供價廉物美產品的初衷至今依然不變，更成為公司文化和形象的重要基礎。</p>
+          <button class="btn btn-outline-primary w-100">查看更多</button>
+          <div class="row mt-5">
+            <div class="col-md-6">
+              <h3>大眾化設計</h3>
+              <p>一直希望為大多數人提供物美價廉的產品，但除了售價和品質，我們在研發產品時同樣重視功能、設計和永續，而能平衡這五大要點的產品，便是大眾化設計。</p>
+            </div>
+            <div class="col-md-6">
+              <h3>提升顧客體驗</h3>
+              <p>目前提供沙發、床墊、室內設計裝潢等服務，且是唯一通過內政部綠建材認證， 讓您輕鬆搭配具整體感的居家環境，讓每一個家庭都能享有最美好的居家環境與歐洲生活。</p>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    </div>
+
+     </section>
+    <!-- section 09 -->
+    <section id="s09">
+      <div class="container">
+        <div class="fs-1 fw-900 text-center" style="color: #9400D3;">安心認證</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center wow animate__rotateInDownLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+              <div>
+                <i class="fa-solid fa-file-circle-check fa-4x me-3" style="color: #B8860B;"></i>
+              </div>
+              <div>
+                <h2 class="fw-900">內政部綠建材標章</h2>
+                <h3>系統板材-內政部綠建材標章、Orderfloor-內政部綠建材標章</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-center wow animate__rotateInDownRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+              <div>
+                <i class="fa-solid fa-file-circle-check fa-4x me-3" style="color: #B8860B;"></i>
+              </div>
+              <div>
+                <h2 class="fw-900">防焰及甲醛測試</h2>
+                <h3>板材防焰測試報告、成型門片甲醛測試報告</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- section 10
+    <section id="s10" style="position: relative;">
+      <div class="container">
+        <div class="row  wow animate__zoomIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="infinite">
+          <div class="col-md-7 s09_text">
+            <h2 class="fw-900 text-center">品牌價值及特性</h2>
+            <p>硬盤房東機制大廈外面培訓肌膚即將一支會不會從而孩子今天，一段只要時間兩位女孩巨大應該神經是我，寂寞。</p>
+            <dl class="row">
+              <dt class="col-sm-3">品牌敘述</dt>
+              <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+            
+              <dt class="col-sm-3">團隊</dt>
+              <dd class="col-sm-9">
+                <p>Definition for the term.</p>
+                <p>And some more placeholder definition text.</p>
+              </dd>
+            
+              <dt class="col-sm-3">另一團隊</dt>
+              <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+            
+              <dt class="col-sm-3 text-truncate">聯絡方式</dt>
+              <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+            
+              <dt class="col-sm-3">定義方式</dt>
+              <dd class="col-sm-9">
+                <dl class="row">
+                  <dt class="col-sm-4">定義方式列表</dt>
+                  <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
+                </dl>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-5 bg-cover s09_pic" style="background-image:url(img/travel11.jpg) ;
+        position: absolute;top: 10px;;bottom: 10px;"></div>
+      </div>
+    </section> -->
+    <!-- section 11 -->
+    <section id="s11">
+      <div class="container" >
+        <div class="row my-3">
+          <div class="col-md-6 " id="map"></div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="" class="form-label">姓名</label>
+              <input type="text" class="form-control is-valid">
+              <div class="valid-feedback">輸入符合規定!</div>
+              <div class="invalid-feedback">輸入不符合規定!</div>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">電話</label>
+              <input type="phone" class="form-control is-valid">
+              <div class="valid-feedback">輸入符合規定!</div>
+              <div class="invalid-feedback">輸入不符合規定!</div>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Email</label>
+              <input type="email" class="form-control is-valid">
+              <div class="valid-feedback">輸入符合規定!</div>
+              <div class="invalid-feedback">輸入不符合規定!</div>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">人數</label>
+              <input type="number" class="form-control is-valid" min="1" max="10">
+              <div class="valid-feedback">輸入符合規定!</div>
+              <div class="invalid-feedback">輸入不符合規定!</div>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                參加
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                不參加
+              </label>
+            </div>
+            <div class="text-end">
+              <button class="btn btn-outline-secondary">取消</button>
+              <button class="btn btn-primary">確認</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section 12 -->
+    <section id="s12">
+      <div class="row">
+        <div class="col-md-6 py-5 bg-cover " style="background-image: url(images/light2.jpg);">
+          <div class="row justify-content-center">
+            <div class="col-md-8 p-3 ms-5 rounded-4 wow animate__slideInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="2" style="background-color:rgba(0,0,0,0.2);">
+              <small class="text-bg-warning fw-300 badge mb-2">徵才公告</small>
+              <h2 class="fw-900 text-white">徵才-店員3名</h2>
+              <p class="fw-300 text-white">1.負責介紹及銷售門市商品。 2.提供顧客之接待與需求服務（如：電話諮詢、調貨、修改、包裝及退換貨處理）。 3.負責商品進貨入庫、銷售管理及庫存管理。 4.負責商品包裝、陳列及促銷品換檔工作</p>
+              <a href="" class="btn btn-outline-danger">詳細資料</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 py-5 bg-cover " style="background-image: url(images/sofa1.jpg);">
+          <div class="row  justify-content-center">
+            <div class="col-md-8 p-3 ms-5 rounded-4  wow animate__slideInRight" data-wow-duration="6s" data-wow-delay="0s" data-wow-iteration="1" style="background-color: rgba(0,0,0,0.2);">
+              <small class="text-bg-success fw-300 badge mb-2">新點開發</small>
+              <h2 class="fw-900 text-white">美加澳三地</h2>
+              <p class="fw-300 text-white">秉持著提供顧客舒適性的基本理念，以專業、創新、用心的態度服務每一位用戶，累積了眾多用戶們的好口碑，也開發更多先進、即時、便利及安全性的環境，是我們的堅持與目標。</p>
+              <a href="" class="btn btn-outline-warning">詳細資料</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section 13
+    <section id="s13">
+      <div class="container-fluid wow animate__bounceInDown" data-wow-duration="2s" data-wow-delay="3s" data-wow-iteration="3">
+        <div class="row">
+            <div class="col-md-4 mt-3 d-flex flex-column">
+                <img src="img/company01.jpg" class="img-fluid" alt="">
+                <h3 class="text-center">台北總公司</h3>
+                <p>
+                    予以太多伺服器安徽常常簡介看著一點今後根本取得地方，解壓某些好了依舊灌水和平世界盃房價，規則互動寂寞你在相當固定，填寫不能下載教程哈哈想像，有一些防治遠遠哪個一切都它們面前自行事件機票媒體體系不管，同樣主持添加全體前進十二，日常停止走向記者高校數字現有系。
+                </p>
+                <button class="btn btn-info w-100 mt-auto">詳細資料</button>
+            </div>
+            <div class="col-md-4 mt-3 d-flex flex-column">
+                <img src="img/company02.jpg" class="img-fluid" alt="">
+                <h3 class="text-center">台中分公司</h3>
+                <p>
+                    予以太多伺服器安徽常常簡介看著一點今後根本取得地方，解壓某些好了依舊灌水和平世界盃房價，規則互動寂寞你在相當固定，填寫不能下載教程哈哈想像，有一些防治遠遠哪個一切都它們面前自行事件機票媒體體系不管，同樣主持添加全體前進十二，日常停止走向記者高校數字現有系。
+                </p>
+                <button class="btn btn-info w-100 mt-auto">詳細資料</button>
+            </div>
+            <div class="col-md-4 mt-3 d-flex flex-column">
+                <img src="img/company03.jpg" class="img-fluid" alt="">
+                <h3 class="text-center">高雄分公司</h3>
+                <p>
+                    予以太多伺服器安徽常常簡介看著一點今後根本取得地方，解壓某些好了依舊灌水和平世界盃房價，規則互動寂寞你在相當固定，填寫不能下載教程哈哈想像，有一些防治遠遠哪個一切都它們面前自行事件機票媒體體系不管，同樣主持添加全體前進十二，日常停止走向記者高校數字現有系。
+                </p>
+                <button class="btn btn-info w-100 mt-auto">詳細資料</button>
+            </div>
+            <div class="col-md-4 mt-3 d-flex flex-column">
+                <img src="img/company04.jpg" class="img-fluid" alt="">
+                <h3 class="text-center">香港分公司</h3>
+                <p>
+                    予以太多伺服器安徽常常簡介看著一點今後根本取得地方，解壓某些好了依舊灌水和平世界盃房價，規則互動寂寞你在相當固定，填寫不能下載教程哈哈想像，有一些防治遠遠哪個一切都它們面前自行事件機票媒體體系不管，同樣主持添加全體前進十二，日常停止走向記者高校數字現有系。
+                </p>
+                <button class="btn btn-info w-100 mt-auto">詳細資料</button>
+            </div>
+            <div class="col-md-4 mt-3 d-flex flex-column">
+                <img src="img/company05.jpg" class="img-fluid" alt="">
+                <h3 class="text-center">美國分公司</h3>
+                <p>
+                    予以太多伺服器安徽常常簡介看著一點今後根本取得地方，解壓某些好了依舊灌水和平世界盃房價，規則互動寂寞你在相當固定，填寫不能下載教程哈哈想像，有一些防治遠遠哪個一切都它們面前自行事件機票媒體體系不管，同樣主持添加全體前進十二，日常停止走向記者高校數字現有系。
+                </p>
+                <button class="btn btn-info w-100 mt-auto">詳細資料</button>
+            </div>
+            <div class="col-md-4 mt-3 d-flex flex-column">
+                <img src="img/company06.jpg" class="img-fluid" alt="">
+                <h3 class="text-center">馬來西亞辦事處</h3>
+                <p>
+                    予以太多伺服器安徽常常簡介看著一點今後根本取得地方，解壓某些好了依舊灌水和平世界盃房價，規則互動寂寞你在相當固定，填寫不能下載教程哈哈想像，有一些防治遠遠哪個一切都它們面前自行事件機票媒體體系不管，同樣主持添加全體前進十二，日常停止走向記者高校數字現有系。
+                </p>
+                <button class="btn btn-info w-100 mt-auto">詳細資料</button>
+            </div>
+        </div>
+    </div>
+    </section> -->
+     <!-- section 14 -->
+     <section>
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active disabled fw-900" aria-current="page" href="#">Copy right</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">網站索引</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">同業合作</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+     <!-- section 15 -->
+     <section>
+      <div class="toast floating-toast bg-transparent" role="alert" aria-live="assertive" aria-atomic="true"
+          id="autoShowToast" style="position: fixed; left: 0; margin-top: 1cm; margin-left: 15px;">
+          <div class="toast-header">
+              <img src="images/desk4.jpg" class="rounded me-2" style="width: 100%; height: auto;">
+              <button type="button " class="btn-close bg-info" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body text-bg-success my-auto text-center fw-900">
+            居家就是生活
+          </div>
+      </div>
+  </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+      // 在 DOM 加載完成後，初始化 Toast 實例並顯示
+      document.addEventListener('DOMContentLoaded', function () {
+          var toastElement = document.getElementById('autoShowToast');
+          var bootstrapToast = new bootstrap.Toast(toastElement);
+          bootstrapToast.show();
+      });
+  </script>
+    <script>
+      const counterUp = window.counterUp.default;
+
+      const callback = (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          if (entry.isIntersecting && !el.classList.contains("is-visible")) {
+            counterUp(el, {
+              duration: 2000,
+              delay: 16,
+            });
+            el.classList.add("is-visible");
+          }
+        });
+      };
+
+      const IO = new IntersectionObserver(callback, { threshold: 1 });
+
+      const el01 = document.querySelector(".counter01");
+      IO.observe(el01);
+      const el02 = document.querySelector(".counter02");
+      IO.observe(el02);
+      const el03 = document.querySelector(".counter03");
+      IO.observe(el03);
+      const el04 = document.querySelector(".counter04");
+      IO.observe(el04);
+      //***********************************************************
+      var flag_username = false;
+      var flag_pwd = false;
+      var flag_re_pwd = false;
+      var flag_email = false;
+      var flag_chk01 = false;
+      $(function(){
+            //判斷是否登入
+            if(getCookie("UID01")!=""){
+              // UID存在，傳遞至後端api判斷否合法
+              var dataJSON = {};
+              dataJSON["UID01"]=getCookie("UID01");
+              console.log(JSON.stringify(dataJSON));
+              $.ajax({
+                type:"POST",
+                url:"member-Check_UID-.api.php",
+                data:JSON.stringify(dataJSON),
+                dataType:"json",
+                success:showdata_Check_UID,
+                error:function(){
+                  alert("error-member-Check_UID-.api.php");
+                }
+              });
+            }
+            // 登出按鈕監聽#s02_logout_btn
+            $("#s02_logout_btn").click(function(){
+              setCookie("UID01","",7);
+              location.href="assignment_furniture.html";
+            });
+            //即時監聽 #username
+            $("#username").bind("input propertychange", function(){
+               // console.log($(this).val().length); is-invalid
+                if($(this).val().length > 3 && $(this).val().length <9){
+                    //符合規定，傳遞至後端檢查帳號是否符合規定
+
+                    var dataJSON = {};
+                    dataJSON["Username"] = $("#username").val();
+                    console.log(JSON.stringify(dataJSON));
+                    $.ajax({
+                        type: "POST",
+                        url: "member-check_uni_api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_check_uni,
+                        error: function () {
+                            alert("error-member-check_uni_api.php");
+                        }
+                    });
+                }else{
+                    //不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_username = false;
+                }
+            });
+            //即時監聽 #pwd
+            $("#pwd").bind("input propertychange", function(){
+               // console.log($(this).val().length); is-invalid
+                if($(this).val().length > 4 && $(this).val().length <11){
+                    //符合規定
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                    flag_pwd = true;
+                }else{
+                    //不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_pwd = false;
+                }
+            });
+             //即時監聽 #re_pwd
+             $("#re_pwd").bind("input propertychange", function(){
+               // console.log($(this).val().length); is-invalid
+                if($(this).val()==$("#pwd").val()){
+                    //符合規定
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                    flag_re_pwd = true;
+                }else{
+                    //不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_re_pwd = false;
+                }
+            });
+             //即時監聽 #email
+             $("#email").bind("input propertychange", function(){
+               // console.log($(this).val().length); is-invalid
+                if($(this).val().length > 0 && $(this).val().length < 11){
+                    //符合規定
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                    flag_email = true;
+                }else{
+                    //不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_email = false;
+                }
+            });
+         
+            //監聽 checkbox #chk01
+            $("#chk01").change(function(){
+                if($(this).is(':checked')){
+                    //console.log("同意");
+                    $(this).next().text('同意');
+                    flag_chk01 = true;
+                }else{
+                    //console.log("不同意");  
+                    $(this).next().text('需要勾選!');
+                    flag_chk01 = false;  
+                }
+                
+            });
+             //註冊按鈕監聽 #reg_btn
+             $("#reg_btn").click(function(){
+                // console.log("test");             
+                if(flag_username && flag_pwd && flag_re_pwd && flag_email && flag_chk01){
+                    //{"Username":"XX", "Password":"XXX", "Email":"XXXXX"}
+                    var dataJSON = {};
+                    dataJSON["Username"] = $("#username").val();
+                    dataJSON["Pwd"] = $("#pwd").val();
+                    dataJSON["Email"]    = $("#email").val();
+                    console.log(JSON.stringify(dataJSON));
+
+                    //傳遞至後端執行註冊行為
+                    $.ajax({
+                        type: "POST",
+                        url: "member-Create-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata,
+                        error: function(){
+                            alert("error-member-Create-api.php");
+                        }
+                    });
+
+                }else{
+                    alert("欄位有錯請修正!");
+                }
+            });
+             //登入按鈕監聽 #login_btn
+             $("#login_btn").click(function () {
+                // console.log($("#login_username").val()+$("#login_password").val());
+                //{"Username":"XX", "Password":"XXX"}
+                var dataJSON = {};
+                dataJSON["Username"] = $("#login_username").val();
+                dataJSON["Pwd"] = $("#login_password").val();
+                console.log(JSON.stringify(dataJSON));
+
+                //傳遞至後端執行登入行為
+                $.ajax({
+                    type: "POST",
+                    url: "member-login_api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_login,
+                    error: function () {
+                        alert("error-member-login_api.php");
+                    }
+                });
+            });
+          });
+          function showdata(data){
+            console.log(data);
+            if(data.state){
+                alert(data.message);
+                location.href = "assignment_furniture.html"
+            }else{
+                alert(data.message);
+            }
+            }
+            function showdata_check_uni(data){
+            console.log(data);
+            if(data.state){
+              //帳號不存在，可以使用
+                $("#username").removeClass('is-invalid');
+                $("#username").addClass('is-valid');
+                flag_username = true;
+            }else{
+              //帳號存在，不可以使用
+                $("#username").removeClass('is-valid');
+                $("#username").addClass('is-invalid');
+                flag_username = false;
+            }
+        }
+        function showdata_login(data) {
+            console.log(data);
+            console.log(data.data[0].Level);
+            if (data.state) {
+                alert(data.message);
+                // console.log(data.data[0].UID01);
+                var uid01 = data.data[0].UID01;
+                setCookie("UID01", uid01, 7);
+                $("#loginModal").modal("hide");
+                $("#user_message").text(data.data[0].Username + "登入中!");
+                // 隱藏登入註冊按鈕
+                $("#s02_login_btn").addClass("d-none");
+                $("#s02_reg_btn").addClass("d-none");
+                // 顯示高級功能
+                // $("#s02_member_btn01").removeClass("disabled");
+                $("#s02_member_btn02").removeClass("disabled");
+                // $("#s02_member_btn03").removeClass("disabled");
+                //顯示登出按鈕
+                $("#s02_logout_btn").removeClass("d-none");
+                //顯示s04
+                $("#s04").removeClass("d-none");
+                // $("#s02_member_btn01").removeClass("disabled");
+                //   $("#s02_member_btn03").removeClass("disabled"); 
+                if(data.data[0].Level=="1"){
+                 console.log(data.data[0].Level);
+                   $("#s02_member_btn01").removeClass("disabled");
+                   $("#s02_member_btn03").removeClass("disabled");
+                 }
+
+            } else {
+                alert(data.message);
+            }
+        }
+        function showdata_Check_UID(data){
+            console.log(data);
+            if(data.state){
+                //驗證成功
+                $("#user_message").text(data.data[0].Username + "登入中!");
+                $("#s02_login_btn").addClass("d-none");
+                $("#s02_reg_btn").addClass("d-none");
+
+                // 顯示高級功能
+                // $("#s02_member_btn01").removeClass("disabled");
+                $("#s02_member_btn02").removeClass("disabled");
+                // $("#s02_member_btn03").removeClass("disabled");
+                // 顯示登出按鈕
+                $("#s02_logout_btn").removeClass("d-none");
+                //顯示s04
+                $("#s04").removeClass("d-none");
+                if(data.data[0].Level==1){
+                  console.log(data.data[0].Level);
+                  $("#s02_member_btn01").removeClass("disabled");
+                  $("#s02_member_btn03").removeClass("disabled"); 
+                }
+            }
+        }
+       
+        // w3s
+        function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+         }
+        // W3S
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+    </script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+        </script>
+         <script>
+          // 居住人口分布
+          const ctxAddr = document.getElementById('myChartAddr');
+          const chartAddr = new Chart(ctxAddr, {
+              // type: 'scatter',
+              data: {
+                  labels: ['108年','109年','110年','111年','112年',],
+                  datasets: [{
+                      type: 'line',
+                      label: '銷售額',
+                      data: [19,16,18,22,24],
+                      // 是否填滿
+                      fill:false,
+                      // 線的寬度
+                      borderWidth: 3,
+                      // 整體顏色
+                      borderColor:'#003E19',
+                      // 園裡面的顏色
+                      backgroundColor:['rgb(255, 99, 132)','rgb(54, 162, 235)','rgb(255, 205, 86)'],
+                      // 標註點為圓形，預設圓形'rectRot'菱形
+                      pointStyle:"rectRot",
+                      // 標註點半徑，5
+                      pointRadius:8,
+                      // 滑鼠到標點上的擴張動畫
+                      pointHoverRadius:6,
+                      // 曲線，預設0
+                      tension:0.0,
+                  },{type: 'bar',
+                      label: '銷售年度',
+                      data: [19,16,18,22,24],
+                      // 是否填滿
+                      fill:false,
+                      // 線的寬度
+                      borderWidth: 2,
+                      // 整體顏色
+                      borderColor:'rgb(75,192,192)',
+                      // 園裡面的顏色
+                      backgroundColor:['#FFD954'],
+                      // 標註點為圓形，預設圓形'rectRot'菱形
+                      pointStyle:"rectRot",
+                      // 標註點半徑，3
+                      pointRadius:3,
+                      // 滑鼠到標點上的擴張動畫
+                      pointHoverRadius:6,
+                      // 曲線，預設0
+                      tension:0.0,}]
+              },
+              options: {
+                  scales: {
+                      x: {
+                          title:{
+                          display: true,
+                          text:'年度',
+                          // 刻度線顏色
+                          color: '#A88661',
+                          // 刻度文字框線顏色
+                          textStrokeColor: 'rgba(255, 255, 0, 1)',
+                          // 刻度文字框線寬度
+                          textStrokeWidth: 2,
+                          }
+                      },
+                      y: {
+                          beginAtZero:true,
+                          title:{
+                          display: true,
+                          text:'千萬',
+                          // 刻度線顏色
+                          color: '#E5BB4B',
+                          // 刻度文字框線顏色
+                          textStrokeColor: 'rgba(255, 255, 0, 1)',
+                          // 刻度文字框線寬度
+                          textStrokeWidth: 2,
+                          }
+                      },
+                  }
+              }
+          });
+          </script>
+           <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+       <script>
+           var map = L.map('map').setView([24.0816285,120.535803],7.5);
+   
+           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright"> </a>  '
+           }).addTo(map);
+   
+           L.marker([24.175372,120.6920661]).addTo(map)
+               .bindPopup('<h7 class="text-success fw-600">台中北屯</h7>');
+           L.marker([24.1306441,120.6582497]).addTo(map)
+               .bindPopup('<h7 class="text-success fw-900">台中南屯</h7>');
+           L.marker([25.0781615,121.569894]).addTo(map)
+               .bindPopup('<h7 class="text-success fw-900">台北內湖</h7>');
+           L.marker([25.0779745,121.2322976]).addTo(map)
+               .bindPopup('<h7 class="text-success fw-900">桃園</h7>');
+           L.marker([23.4790933,120.3668942]).addTo(map)
+               .bindPopup('<h7 class="text-success fw-900">嘉義</h7>');
+           L.marker([22.9971539,120.212513]).addTo(map)
+               .bindPopup('<h7 class="text-success fw-900">台南</h7>');
+           L.marker([22.6315334,120.2887052]).addTo(map)
+               .bindPopup('<h7 class="text-success fw-900">高雄</h7>');
+           L.marker([24.0816285,120.535803]).addTo(map)
+               .bindPopup('<h7 class="text-success fw-900">彰化</h7>');
+
+           
+         
+           // .openPopup();
+       </script>
+  </body>
+</html>
